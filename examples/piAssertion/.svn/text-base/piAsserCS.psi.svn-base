@@ -1,0 +1,112 @@
+Here are some example agents to investigate the transition constraints solver:
+
+
+--1-- "In(a)"(x:Base) | '"In(a)"<b> "In(a)"(x:"Inp(Base)") | '"In(a)"<b>
+----- This is a very simple parallel agent. In order to this agent pass the type-checker rules we need to issue
+----- the following commands into the interpreter: deftype {a:"Ch(Base)" ; b : Base} and deftype {"(a,I) ,(a,O)"}.
+----- This agent has three possible transition derivatives, tau transitions, and transition of each agent independantly. 
+
+--2-- (| "(a,I)" |) | ("In(a)"(x:Base))
+----- This time type-checker complains about the free name a in assertion agent which is not defined in
+----- the current type environment. If we define it manually with the command "deftype{a:"Ch(Base)"}" then 
+----- the agent will type-checks with no errors. And it has one input transition.
+
+--3-- ((new (a : "Inp(Base)"))((| "(a,I)" |) | "In(a)"(x:Base))) | ((new (b : "Outp(Base)"))((| "(b,O)" |) | '"Out(b)"<c>));
+----- This agent is not well-typed because the name c at the last sub-agent is not defined in the environment.
+----- If we insert it with its appropriate type (Base) into the type environmnet, then the agent will type-check without
+----- any error. And this agent has a tau transition as follows:
+
+-----  "" |>
+-----    --|tau|-->
+      
+-----      Constraint:
+-----        (new ga : "Ch(Base)", ga : "Ch(Base)"){| " (b^o)  (ga^o)  (a^i)  (ga^i) " |- "Out( ga ) <-> In( ga )" |}
+-----      Solution:
+-----        ([], "")
+-----      Derivative:
+-----        ((new ga : "Ch(Base)")( ((|" (ga^i) "|)) | (0) )) |
+-----          ((new ga : "Ch(Base)")( ((|" (ga^o) "|)) | (0) ))
+ 
+
+--5-- A(a:"Ch(Base)" , b:"Ch(Base)" , c : Base) <= "In(a)"(x:Base) | '"Out(b)"<c>
+----- This example is an identifier agent. Calling A with appropriate actual parameters (satisfying the typing rules)
+----- enables three corresponding derivatives:
+----- 3 possible derivative(s)
+----- 1 ---
+-----  "" |>
+-----    --|tau|-->
+      
+-----      Constraint:
+-----        {| "Out( y ) <-> In( x )" |}
+-----      Solution:
+-----        ([y := x], " (x^o) ")
+-----      Derivative:
+-----        (0) | (0)
+
+----- 2 ---
+-----  "" |>
+-----    --|gb(ga)|-->
+      
+-----      Constraint:
+-----        {| "In( x ) <-> gb" |}
+-----      Solution:
+-----        ([gb := "Out( x )"], " (x^o) ")
+-----      Derivative:
+-----        (0) | ('"Out( y )"<z>)
+
+----- 3 ---
+-----  "" |>
+-----    --|ga z|-->
+      
+-----      Constraint:
+-----        {| "Out( y ) <-> ga" |}
+-----      Solution:
+-----        ([ga := "In( y )"], " (y^i) ")
+-----      Derivative:
+-----        ("In( x )"(ga : Base)) | (0)
+
+
+--6-- "In(a)"(x:Base).(|"(b,O)"|) | (| "(a,I)" |) | '"Out(b)"<c>
+----- This example shows the effect of guarded assertions on typability and transition of agents.
+----- Note that we need to manually insert the assertion (b,O) into the type environment to make 
+----- the last agent well-typed (assertion (|(b,O)|) is guarded, therefore can not affect the typability 
+----- of the output channel b on the last agent).
+
+--7-- "In(a)"(x:Base) | "In(a)"(c:Base);
+----- This agent is a very simple example to show the that constraint solver is doing its job appropriatly.
+----- Due to the typing rules for conditions, though equivalence relations like
+----- In(a) <--> In(b) are valid equivalence but the type-checker avoids tau transitions on this kind of channel equivalences.
+----- So the above agent should only has two separate transitions on each side of the parallel operator.
+----- If we issue a sstep command assuming that all the required (name,type) pairs and also assertions are in
+----- the environment we will get the following:
+
+----- 2 possible derivative(s)
+----- 1 ---
+      "" |>
+        --|ga(x)|-->
+      
+        Constraint:
+          {| "In( a ) <-> ga" |}
+        Solution:
+          ([ga := "Out( a )"], " (a^o) ")
+        Derivative:
+          (0) | ("In( a )"(c : Base))
+
+----- 2 ---
+      "" |>
+        --|ga(c)|-->
+      
+        Constraint:
+          {| "In( a ) <-> ga" |}
+        Solution:
+          ([ga := "Out( a )"], " (a^o) ")
+        Derivative:
+          ("In( a )"(x : Base)) | (0)
+
+----- This example shows that constraint solver is doing its job in the right way.
+
+
+
+----- ((new a:"Ch(Base)")((| "(a,I)" |) | a(x:Base)))   |    ((new b:"Ch(Base)")((| "(b,O)" |) | 'b<b>));
+
+

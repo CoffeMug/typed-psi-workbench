@@ -1,0 +1,30 @@
+\newcommand{\transsRep}[4]{#1~\xmapsto[#3]{#2}~#4}
+% A process constant
+\newcommand{\pconst}[2]{#1 ( #2 )}
+\newcommand{\clause}[2]{#1 \!\Leftarrow\! #2}
+\newcommand{\invocation}[2]{#1 \langle #2 \rangle}
+\newcommand{\sml}[1]{\lstinline[language=sml,firstnumber=last]{#1}}
+\newcommand{\SML}{{\sc Sml}}
+\newcommand{\POLY}{{Poly/ML}}
+\renewcommand{\constr}[1]{{\{\mspace{-4.1mu}| #1 |\mspace{-4.1mu}\}}}
+\renewcommand{\pass}[1]{\llparenthesis #1 \rrparenthesis}
+
+\newcommand{\swap}[3]{(#1\,\,#2)\!\cdot\! #3}
+\newcommand{\perm}[1]{\rho\!\cdot\! #1}
+\newcommand{\terms}{\mathbf{T}}
+\newcommand{\conditions}{\mathbf{C}}
+\newcommand{\assertions}{\mathbf{A}}
+\newcommand{\types}{\mathbf{Ty}}
+
+
+\newcommand{\shrinkmargin}[1]{%
+    \setlength{\rmnsmargin}{#1}%
+    \addtolength{\voffset}{-\rmnsmargin}%
+    \addtolength{\hoffset}{-\rmnsmargin}%
+    \addtolength{\paperwidth}{-2\rmnsmargin}%
+    \addtolength{\paperheight}{-2\rmnsmargin}%
+}%
+\newlength{\rmnsmargin}
+
+
+\newcommand{\entails}{\vdash}

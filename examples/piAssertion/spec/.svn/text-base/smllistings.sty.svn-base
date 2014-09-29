@@ -1,0 +1,66 @@
+\lstdefinelanguage{sml}
+{morekeywords={%
+and,andalso,or,orelse,%
+fun,fn,as,op,o,rec,%
+let,in,val,%
+sharing,where,include,open,local,signature,functor,structure,struct,sig,end,%
+case,of,%
+if,then,else,not,%
+infix,infixr,%
+datatype,type,eqtype,exception,%
+raise,handle,%
+use,%
+},%
+%
+morekeywords=[2]{% default constant values
+true,false,% put them somewhere else
+},%
+% Primitive types
+morekeywords=[3]{%
+int,real,char,string,exn,substring,word,%
+%unit,
+% Primitive datatypes
+bool,list,option,order,%
+option,list,array,vector
+},%
+morekeywords=[4]{%
+map,foldl,foldr,curry,uncurry,filter,%
+},%
+morekeywords=[5]{% Library datatypes
+SOME,NONE,LEFT,RIGHT
+},%
+morekeywords=[6]{% Library structures
+String,Int,List,Option,%
+},%
+%otherkeywords={~,:,:>,::,->,=>,@,|},%
+sensitive,%
+morecomment=[n]{(*}{*)},%
+morestring=[b]",%
+literate={->}{$\rightarrow$}{2}%
+{<>}{$\not=$}{2}%
+{=>}{$\Rightarrow$}2%
+{::}{$:\!\!:$}{2}%
+{>>=}{${\gg=}$}{3}%
+{>>}{$\gg$}{2}%
+}[keywords,comments,strings,directives]%
+
+\lstdefinestyle{sml-numbered-literal}{
+numbers=left,stepnumber=1,numberstyle=\tiny,numbersep=6pt,frame=l,
+basicstyle=\footnotesize,
+escapeinside={(*@}{@*)},
+keywordstyle={[5]\ttfamily},
+keywordstyle={[6]\scshape},
+keywordstyle={[4]\sffamily},
+keywordstyle={[2]\itshape},
+}
+%\bfseries %\ttfamily %\itshape
+
+\lstdefinestyle{sml-literal}{
+numbers=none,frame=l,
+basicstyle=\footnotesize,
+escapeinside={(*@}{@*)},
+keywordstyle={[5]\ttfamily},
+keywordstyle={[6]\scshape},
+keywordstyle={[4]\sffamily},
+keywordstyle={[2]\itshape},
+}

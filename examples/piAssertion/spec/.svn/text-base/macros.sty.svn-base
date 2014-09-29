@@ -1,0 +1,233 @@
+\renewcommand{\vec}[1]{\tilde{#1}}
+\newcommand{\myll}{\mkern-5mu \ll\mkern-3mu}
+\newcommand{\mygg}{\mkern-3mu \gg\mkern-5mu}
+\newcommand{\pinull}{\mathbf{0}}
+\newcommand{\one}{\mathbf{1}}
+%\newcommand{\pinu}{\mathbf{\nu}} %only works for upcase greek!!!
+\newcommand{\pinu}{\mbox{\boldmath$\nu$}}
+\newcommand{\op}[1]{\overline{#1}}  % Output
+\newcommand{\opa}[2]{\overline{#1}\langle #2\rangle}
+\newcommand{\ipa}[2]{{#1}\langle #2\rangle}
+\newcommand{\opm}[2]{\overline{#1}\,#2} % monadic
+\newcommand{\ipm}[2]{{#1}\,#2} % monadic
+\newcommand{\parop}{\;|\;}      % parallel operator
+\newcommand{\sdot}{\, . \,}     % Space around '.'
+\newcommand{\bang}{!\,}
+\newcommand{\fus}{=}        %\equiv is hard to read on top of arrows
+\newcommand{\sbp}[2]{\{#1\fus #2\}} % fusion prefix/action
+\newcommand{\sbst}{}            % substitution composition
+\newcommand{\starop}[2]{\langle\!\langle #1\star #2\rangle\!\rangle}
+\newcommand{\starenv}[1]{\langle\!\langle #1\rangle\!\rangle}
+
+\newcommand{\dinop}{\colon}     % delayed input operator
+
+\newcommand{\eqres}[2]{#1\backslash #2} %restricted equation action
+
+\newcommand{\ldbr}{\mbox{$[\![$}}   % left double bracket
+\newcommand{\rdbr}{\mbox{$]\!]$}}   % right
+\newcommand{\und}[1]{\underline{#1}}
+\newcommand{\kw}[2]{#1{\triangleright}{\mathsf{#2}}}
+\newcommand{\id}[1]{\mbox{\it #1}}
+\newcommand{\mc}[2]{\multicolumn{#1}{l}{#2}}
+
+\newcommand{\noname}{\und{\hspace{0.5em}}} % _, name uninteresting
+\newcommand{\pelseop}{\,\mathbf{,}\,}       % pi ``else'' operator [a=b](P\pelseop Q)
+
+\newcommand{\red}{\rightarrow}
+\newcommand{\wred}{\rightarrow^*}
+%\newcommand{\gt}[1]{\stackrel{#1}{\longrightarrow}} %transitions
+\input{jeffrey}
+\newcommand{\gt}[1]{\goesto{#1}}
+\newcommand{\gta}{\gt{\alpha}}
+\newcommand{\gtg}{\gt{\gamma}}
+\newcommand{\gtc}[1]{\goesto{#1}_c}
+%\newcommand{\Gt}[1]{\stackrel{#1}{\Longrightarrow}} %weak transitions
+\newcommand{\Gt}[1]{\Goesto{#1}}
+\newcommand{\Gta}{\Gt{\alpha}}
+\newcommand{\Gtg}{\Gt{\gamma}}
+\newcommand{\lgt}{\rightarrow_\lambda} %lambda reduction
+\newcommand{\gtt}{\gt{\tau}}
+\newcommand{\Gtt}{\Gt{\tau}}
+
+\newcommand{\neggt}[1]{\stackrel{#1}{\rightsquigarrow}}
+
+%\newcommand{\Gplus}[1]{\Goestoplus{#1}}
+\newcommand{\Gplus}[1]{\stackrel{#1}{\Longrightarrow}_+}
+\newcommand{\whcon}{\approx_+}
+\newcommand{\Gtrad}[1]{\Goestotrad{#1}}
+
+\newcommand{\gts}[1]{\sgoesto{#1}}
+\newcommand{\gtts}[1]{\gts{#1,\one}}
+\newcommand{\gtsma}{\gts{\Ms,\alpha}}
+\newcommand{\Gts}[1]{\Sgoesto{#1}}
+
+\newcommand{\simulate}[4]{#1\frames #2\leadsto_{#4}#3}
+\newcommand{\rel}[1]{\;{\cal #1}\;} %relation
+\newcommand{\bisim}{\stackrel{\mbox{\bf .}}{\sim}} %bisimilar
+\newcommand{\wbisim}{\stackrel{\mbox{\bf .}}{\approx}} %weak bisimilar
+\newcommand{\bbisim}{\stackrel{\mbox{\bf .}}{\sim}_b} %barbed bisimilar
+\newcommand{\wbbisim}{\stackrel{\mbox{\bf .}}{\approx}_b} %weak barbed bisimilar
+\newcommand{\basbis}{\stackrel{\mbox{\bf .}}{\sim}_B} %basic bisimilar
+\newcommand{\eql}{\stackrel{\mbox{\bf .}}{\sim}_l}  %late equivalent
+\newcommand{\eqe}{\stackrel{\mbox{\bf .}}{\sim}_e}  %early equivalent
+\newcommand{\heq}{\sim}     %hyper bisimilar
+\newcommand{\wheq}{\approx} %weak hyper
+\newcommand{\oeq}{\sim^o}   %open bisimilar
+\newcommand{\woeq}{\approx^o}   %weak open bisimilar
+\newcommand{\beq}{\sim_b}   %barbed congruent
+\newcommand{\wbeq}{\approx_b}   %weak barbed congruent
+\newcommand{\sheq}{\simeq}  %symbolic hypereq
+\newcommand{\swheq}{\approxeq}  %weak
+\newcommand{\soeq}{\simeq^o}    %symbolic open
+\newcommand{\swoeq}{\approxeq^o}%symbolic weak open
+\newcommand{\eqlc}{\sim_l}  %late congruent
+\newcommand{\eqec}{\sim_e}  %early congruent
+
+\newcommand{\xred}{\rightarrow_\Box}
+\newcommand{\wxred}{\Rightarrow_\Box}
+\newcommand{\obsx}[1]{\downarrow_\Box{#1}}
+\newcommand{\wobsx}[1]{\Downarrow_\Box{#1}}
+\newcommand{\xweq}{\stackrel{\mbox{\bf .}}{\approx}_\Box}
+\newcommand{\xwcong}{\approx_\Box}
+\newcommand{\gred}{\rightarrow_\gamma}  % gamma reduction
+%\newcommand{\wgred}{\Rightarrow_\gamma}    % weak gamma reduction
+\newcommand{\pred}{\rightarrow_\pi} % pi reduction
+%\newcommand{\wpred}{\Rightarrow_\pi}   % weak pi reduction
+\newcommand{\gcong}{\equiv_\gamma}  % gamma struct congruence
+\newcommand{\pcong}{\equiv_\pi}     % pi struct congruence
+\newcommand{\obsg}[1]{\downarrow_\gamma{#1}}
+%\newcommand{\wobsg}[1]{\Downarrow_\gamma^{#1}}
+%\newcommand{\nobsg}{\not\downarrow_\gamma}
+\newcommand{\obsp}[1]{\downarrow #1}%{\downarrow_\pi^{#1}}
+%\newcommand{\wobsp}[1]{\Downarrow_\pi^{#1}}
+%\newcommand{\nobsp}{\not\downarrow_\pi}
+\newcommand{\obs}{\downarrow}
+\newcommand{\gbeq}{\stackrel{\mbox{\bf .}}{\simeq}_\gamma}
+\newcommand{\pbeq}{\stackrel{\mbox{\bf .}}{\simeq}_\pi}
+\newcommand{\gbcon}{\simeq_\gamma}
+\newcommand{\pbcon}{\simeq_\pi}
+\newcommand{\wcong}{\approx}
+\newcommand{\gwcong}{\approx_\gamma}
+\newcommand{\pwcong}{\approx_\pi}
+\newcommand{\gweq}{\stackrel{\mbox{\bf .}}{\approx}_\gamma}
+\newcommand{\pweq}{\stackrel{\mbox{\bf .}}{\approx}_\pi}
+
+
+\newcommand{\depth}[1]{{\rm d}(#1)}
+\newcommand{\names}[1]{{\rm n}(#1)}
+\newcommand{\name}[1]{{\rm name}(#1)}
+\newcommand{\subj}[1]{{\rm subj}(#1)}
+\newcommand{\obj}[1]{{\rm obj}(#1)}
+\newcommand{\opp}{{\rm opp}}
+\newcommand{\bn}[1]{\mbox{\rm bn($#1$)}}
+\newcommand{\fn}[1]{\mbox{\rm fn($#1$)}}
+\newcommand{\an}[1]{\mbox{\rm an($#1$)}}
+\newcommand{\card}[1]{|#1|}
+\newcommand{\fobj}[1]{{\rm fobj}(#1)}
+\newcommand{\bobj}[1]{{\rm bobj}(#1)}
+\newcommand{\bv}[1]{\mathit{bv}(#1)}
+\newcommand{\fv}[1]{\mathit{fv}(#1)}
+\newcommand{\fvx}[2]{\mathit{fv}_{#1}(#2)}
+\newcommand{\cod}[1]{\mathit{cod}(#1)}
+\newcommand{\dom}[1]{\mathit{dom}(#1)}
+\newcommand{\ran}[1]{\mathit{ran}(#1)}
+
+\newcommand{\frna}[1]{\fn{#1}}  % free names
+\newcommand{\bona}[1]{\bn{#1}}  % bound names
+\newcommand{\frre}[1]{{\rm fr}(#1)} % free references
+\newcommand{\bore}[1]{{\rm br}(#1)} % bound references
+
+%\newcommand{\Ms}{{\vec{M}}}    %match sequence
+%\newcommand{\Ns}{{\vec{N}}}
+%\newcommand{\Ls}{{\vec{L}}}
+\newcommand{\Ms}{M}
+\newcommand{\Ns}{N}
+\newcommand{\Ls}{L}
+\newcommand{\ax}[1]{{\bf #1}}   %axiom name
+\newcommand{\irule}[1]{{\mbox{\sc #1}}} % inference rule name
+
+\newcommand{\eqby}[1]{\stackrel{\ax{#1}}{=}} %= by axiom
+\newcommand{\eqbyd}[2]{\stackrel{\ax{#1}}{=_{#2}}} %=_D by axiom
+\newcommand{\eqsince}[1]{\stackrel{(#1)}{=}} % = for some reason
+\newcommand{\eqsinced}[2]{\stackrel{(#1)}{=_{#2}}} % =_D for some reason
+\newcommand{\eqdef}{\stackrel{\mbox{\scriptsize\it def}}{=}} %= by def'n
+\newcommand{\isdef}{\stackrel{\mbox{\scriptsize\it def}}{=}} %def'nd =
+
+\newcommand{\biimpl}{\Leftrightarrow} %bi-implication (equivalence)
+\newcommand{\impl}{\Rightarrow} %implies
+\newcommand{\strimpl}{\not\Leftarrow\Rightarrow} %strict implication
+
+\newcommand{\tinfrule}{\rule[-0.5ex]{0ex}{3ex}} % to give spacing in der. trees
+\newcommand{\tabrulenop}[2]{\quad\mbox{\sc #1}\;\; \tinfrule\displaystyle #2}
+\newcommand{\tabrule}[3]{\quad\mbox{\sc #1}\;\; \frac{\tinfrule\displaystyle #2}{\tinfrule\displaystyle#3}\quad}
+\newcommand{\atabrule}[2]   %anonymous
+{\frac{\tinfrule\displaystyle #1}{\tinfrule\displaystyle#2}}
+
+\newcommand{\eqnumber}{\refstepcounter{equation}(\theequation)}
+
+\newcommand{\fcalc}{fusion calculus}
+%\newcommand{\calc}{fusion-calculus}
+\newcommand{\lcalc}{$\lambda$-calculus}
+\newcommand{\upc}{up-calculus}
+%\newcommand{\pic}{$\pi$-calculus}
+\newcommand{\pic}{pi-calculus}
+\newcommand{\Pic}{Pi-calculus}
+\newcommand{\apic}{applied pi-calculus}
+\newcommand{\Apic}{Applied pi-calculus}
+\newcommand{\apics}{applied pi-calculi}
+\newcommand{\Apics}{Applied pi-calculi}
+\newcommand{\epic}{extended pi-calculus}
+\newcommand{\Epic}{Extended pi-calculus}
+\newcommand{\epics}{extended pi-calculi}
+\newcommand{\Epics}{Extended pi-calculi}
+\newcommand{\spic}{spi calculus}
+\newcommand{\Spic}{Spi calculus}
+% \newcommand{\frpic}{framed $\pi$-calculi}
+% \newcommand{\Frpic}{Framed $\pi$-calculi}
+\newcommand{\frpic}{framed pi-calculi}
+\newcommand{\Frpic}{Framed pi-calculi}
+\newcommand{\gac}{$\gamma$-calculus}
+\newcommand{\gcalc}{\gac}
+\newcommand{\rcalc}{$\rho$-calculus}
+\newcommand{\rc}[1]{$\rho(#1)$}
+%\newcommand{\eqc}{Fusion Calculus}
+
+\newcommand{\ITE}[3]{{\mbox{{\tt if} }}#1{\mbox{ {\tt then} }}#2{\mbox{ {\tt else }}}#3}
+\newcommand{\cand}{\stackrel{.}{\wedge}}
+\newcommand{\eqmod}{\models\!\!\!|}
+\newcommand{\tru}{\stackrel{.}{\top}}
+
+\newcommand{\fhdnof}[1]{{\cal A}^f(#1)}
+\newcommand{\hdnames}[2]{\mathsf{#1}[#2]}
+\newcommand{\hdmap}[1]{\mathsf{#1}}
+\newcommand{\hdmapof}[2]{\hdmap{#1}[#2]}
+\newcommand{\norm}[1]{\mbox{\rm norm}(#1)}
+\newcommand{\idsbst}{\mbox{\rm id}}
+\newcommand{\negtr}[1]{\overline{#1}}
+\newcommand{\hdeq}{\sim}    %**** change this
+\newcommand{\leftrightharpoonup}{\leftharpoonup\!\!\!\!\rightharpoonup}
+\newcommand{\pcorr}{\leftrightharpoonup} %partial correspondence
+% Note difference to \red, which is reduction
+\newcommand{\redundant}[1]{\mathrm{red}[#1]}
+
+%%%% Emilio's macros
+
+\newcommand{\emi}[1]{{\marginpar[\scriptsize eM: {#1}]{\scriptsize eM: {#1}}\label{:emi:}}}       % per i commenti di Emilio
+%\newcommand{\emi}[1]{}
+%\newcommand{\bv}[1]{{\marginpar[\scriptsize BV: {#1}]{\scriptsize BV: {#1}}\label{:bv:}}}       % per i commenti di Bjorn
+%\newcommand{\bv}[1]{}
+\newcommand{\comment}[1]{}
+\newcommand{\hda}{HD-automata}
+\newcommand{\hdn}{HD-automaton}
+\newcommand{\arw}[1]{\gt{#1}}
+\newcommand{\mmpi}{\mbox{$\pi$-calculus}}
+\newcommand{\pia}{\mbox{$\pi$-agents}}
+\newcommand{\degree}[1]{\mathrm{deg}(#1)}
+\newcommand{\invinj}{\mbox{$\,\leftarrow\!\!\!\!\rightharpoonup\,$}}
+\newcommand{\parfun}{ \ \ \circ\!\!\!\!\!\!\!\!\longrightarrow}
+\newcommand{\lparfun}{ \ \ \circ\!\!\!\!\!\!\!\!\longleftarrow}
+%\newcommand{\parfun}{\longrightarrow\!\!\!\!\!\!\!\!\circ\ \ }
+%\newcommand{\lparfun}{\longleftarrow\!\!\!\!\!\!\!\!\circ\ \ }
+\newcommand{\mmdef}{\mbox{$\stackrel{\mbox{\scriptsize def}}{=}$}}
+
+\newcommand{\conf}[1]{\langle {#1} \rangle}

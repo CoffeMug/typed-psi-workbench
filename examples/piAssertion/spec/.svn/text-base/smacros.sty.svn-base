@@ -1,0 +1,217 @@
+\newcommand{\xRightarrow}[2][]{\ext@arrow 0359\Rightarrowfill@{#1}{#2}} 
+\definecolor{sgreen}{rgb}{0,0.3,0}
+\newcommand{\api}{applied pi-calculus}
+\newcommand{\Api}{Applied pi-Calculus}
+\newcommand{\sapi}{symbolic applied pi-calculus}
+\newcommand{\Sapi}{Symbolic applied pi-calculus}
+\newcommand{\ve}[1]{\widetilde{#1}}
+\newcommand{\defn}{\stackrel{\mathrm{def}}{=}}
+\newcommand{\apitransarrow}[1]{\goesto{#1}}
+\newcommand{\trans}[3]{#1 \; \apitransarrow{#2} \; #3}
+% Trans new names
+%\newcommand{\goesto}[1]{\@@transition\rightarrowfill{#1}}
+\newcommand{\transnn}[4]{#1 \; \goesto{#2\;[#3]} \; #4}
+\newcommand{\transs}[4]{#1~\xrightarrow[#3]{#2}~#4}
+\newcommand{\wtranss}[4]{#1~\xRightarrow[#3]{#2}~#4}
+\newcommand{\sgto}[2]{\xrightarrow[#2]{#1}}
+\newcommand{\transb}[3]{#1 \; \Sgoesto{#2} \; #3}
+\newcommand{\transc}[4]{#1 \; \xrightarrow[#3]{#2} \; #4}
+%\newcommand{\transw}[3]{#1 \; \stackrel{#2}{\Longrightarrow} \; #3}
+\newcommand{\transw}[3]{#1~\xRightarrow{#2}~#3}
+\newcommand{\transws}[3]{#1 \; \stackrel{#2}{\Longrightarrow}_s \; #3}
+\newcommand{\outunit}[1]{\overline{#1}}
+%\newcommand{\out}[2]{\overline{#1}\langle #2 \rangle}
+\newcommand{\out}[2]{\overline{#1}\,#2 }
+\newcommand{\inn}[2]{\underline{#1}\,#2}
+%\newcommand{\inprefix}[3]{\underline{#1}(\lambda #2) #3}
+\newcommand{\inprefix}[3]{\underline{#1}(#3)}
+%\newcommand{\inlabel}[3]{\underline{#1}(\lambda #2) #3}
+\newcommand{\inlabel}[3]{\underline{#1}(#3)}
+\newcommand{\lin}[3]{\underline{#1}(#2)}
+%\newcommand{\bout}[3]{(\mathbf{\nu}#1)\overline{#2}\langle #3 \rangle}
+\newcommand{\bout}[3]{\overline{#2}\:(\mathbf{\nu}#1) #3}
+\newcommand{\sbout}[3]{\overline{#1}(\mathbf{\nu}#2)#3}
+\newcommand{\oout}[2]{\mathbf{\exists}#2\overline{#1}\langle #2 \rangle}
+\newcommand{\inp}[2]{#1\langle #2 \rangle}
+%\newcommand{\sinp}[2]{\exists #2#1\langle #2 \rangle}
+\newcommand{\sinp}[3]{#1\:\lambda #2 #3}
+\newcommand{\symout}[2]{\overline{#1}#2}
+\newcommand{\binp}[2]{#1(#2)}
+\newcommand{\sbn}[1]{{\rm sbn}(#1)}
+\newcommand{\conds}{\triangleleft}
+\newcommand{\vareq}{\equiv_{\rm V}}
+\newcommand{\equivc}{\equiv_{c}}
+\newcommand{\equivn}{\equiv_{n}}
+\newcommand{\equivr}{\equiv_{r}}
+\newcommand{\equivs}{\equiv_{s}}
+\newcommand{\lequal}[1]{=_{#1}}
+\newcommand{\equations}{\mbox{\rm \bf \sf \small E}}
+\newcommand{\aframe}[1]{\mathcal{F}(#1)}
+\newcommand{\sframe}[1]{\mathcal{F}(#1)}
+\newcommand{\tframe}[1]{\mathcal{F}(#1)}
+\newcommand{\cframe}[1]{\mathcal{F}_\Phi(#1)}
+\newcommand{\fc}[1]{\mathcal{C}_F[#1]}
+%\newcommand{\fr}[1]{\mathcal{F}(#1)}
+\newcommand{\ag}[1]{\mathcal{A}(#1)}
+\newcommand{\fradd}{\cup}
+\newcommand{\frames}{\,\rhd\,}
+\newcommand{\sol}[1]{{\rm sol}(#1)}
+\newcommand{\al}[2]{(\nu #2=#1)}
+\newcommand{\alias}[3]{\textbf{alias } \{{}^{#1}\!/\!{}_{#2}\} \textbf{ in } #3}
+\newcommand{\letin}[3]{\textbf{let } #2 = #1 \textbf{ in } #3}
+\newcommand{\sat}[2]{Sat_{#1}(#2)}
+\newcommand{\res}[1]{(\mathbf{\nu}#1)}
+\newcommand{\resvar}[2]{(\mathbf{\nu}#1:#2)}
+\newcommand{\scope}[1]{\mathbf{\nu}#1}
+%\newcommand{\fresh}[1]{\reflectbox{$\mathsf{N}$}#1}
+\newcommand{\fresh}[1]{\res{#1}}
+%\newcommand{\freshi}[2]{\reflectbox{$\mathsf{N}$}_{#1}#2}
+%\newcommand{\freshv}[1]{\fresh{\ve{#1}}}
+\newcommand{\freshin}{\#}
+\newcommand{\ground}[1]{ground(#1)}
+\newcommand{\constrains}{:}
+\newcommand{\lconstrains}{\triangleleft}
+\newcommand{\mappings}{\triangleright}
+\newcommand{\hooks}{\triangleleft}
+\newcommand{\och}{\wedge}
+\newcommand{\logicify}[1]{logicify(#1)}
+\newcommand{\ifthel}[3]{\mbox{\rm\ensuremath{\textbf{if } #1 \textbf{ then } #2 \textbf{ else } #3}}}
+\newcommand{\ifthen}[2]{\mbox{\rm\ensuremath{\textbf{if } #1 \textbf{ then } #2}}}
+%\newcommand{\ci}[2]{#1.#2} % Case item
+% \newcommand{\ci}[2]{#1\,{\centerdot}\,#2} % Case item
+\newcommand{\ci}[2]{#1:#2} % Case item
+\newcommand{\caseelse}[2]{\textbf{case } #1 \textbf{ else } #2}
+\newcommand{\caseoelse}[2]{\textbf{case } #1 \text{ }[\textbf{else } #2]}
+\newcommand{\case}[1]{\mbox{\rm\ensuremath{\textbf{case } #1}}}
+\newcommand{\casesep}{\mathrel{[\hspace{-0.1ex}]}} %black box please?
+\newcommand{\casesprod}[1]{\textbf{case}\casesep #1}
+\newcommand{\pll}{\:|\:}
+\newcommand{\cpll}{\:\parallel\:}
+\newcommand{\vect}[1]{\langle #1 \rangle}
+\newcommand{\typeass}[3]{#1:\vect{#2;#3}}
+\newcommand{\tass}[2]{#1:#2}
+\newcommand{\typeassv}[3]{\tilde{#1}:\vect{\tilde{#2};\tilde{#3}}}
+\newcommand{\tassv}[2]{\tilde{#1}:\tilde{#2}}
+\newcommand{\oftype}{\in}
+\newcommand{\match}[2]{[#1\!\!=\!\!#2]}
+\newcommand{\nil}{\mathbf{0}}
+\newcommand{\config}[2]{#1 \,\rhd\, #2}
+\newcommand{\configs}[3]{[#1,#2]\# #3}
+\newcommand{\extend}{+}
+\newcommand{\subtype}{<:}
+\newcommand{\tuple}[2]{\langle #1 , #2 \rangle}
+\newcommand{\exposes}{\downarrow}
+\newcommand{\exposesw}{\Downarrow}
+\newcommand{\wbarbedequivalent}{\cong}
+\newcommand{\wbarbedcongruent}{\cong^c}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\E}{\mathbf{E}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\J}{\mathcal{J}}
+\newcommand{\sembrack}[1]{[\![#1]\!]}
+\newcommand{\channel}{\mathcal{C}}
+\newcommand{\instanceof}[1]{\rel{\surd_{\!\!{#1}}}}
+\newcommand{\instmap}[2]{\ldbr #1 \rdbr_{#2}}
+\newcommand{\instmapd}[3]{\ldbr #1 \rdbr_{#3}^{#2}}
+\newcommand{\equiinstanceof}{\stackrel{=}{\surd}}
+\newcommand{\infers}{\vdash_s}
+%\newcommand{\simplies}{\simeq \hspace{-3pt} >}
+\newcommand{\simplies}{\leq}
+\newcommand{\ssimplies}{\simplies_s}
+%\newcommand{\cimplies}{\simeq\hspace*{-3pt}>}
+\newcommand{\cimplies}{\Rightarrow}
+\newcommand{\xxximplies}{\simeq\hspace*{-3pt}>}
+\newcommand{\sequivalent}{\simeq}
+\newcommand{\ssequivalent}{\simeq_s}
+\newcommand{\nssequivalent}{\nLeftrightarrow_s}
+\newcommand{\consistent}[1]{\odot(#1)}
+\newcommand{\sidecondition}[1]{\small{$1}}
+\newcommand{\subst}[2]{\{{}^{#1}\!/\!{}_{#2}\}}
+\newcommand{\ssubst}[2]{\{{}^{#1}\!/\!{}_{#2}\}}
+\newcommand{\isubst}[2]{\{{}^{#1}\!/\!{}_{#2}\}}
+\newcommand{\lsubst}[2]{[#2 := #1]}
+\newcommand{\osubst}[2]{{\lsubst{#1}{#2}}_{\mbox{\rm o}}}
+\newcommand{\fsubst}[2]{\circ \lsubst{#1}{#2}}
+\newcommand{\ev}[1]{\mathit{ev}(#1)}
+\newcommand{\n}{\mbox{{\rm n}}}
+\newcommand{\carries}[2]{\mbox{$#1$ carries $#2$}}
+\newcommand{\evs}[2]{\mathit{ev}_{#2}(#1)}
+\newcommand{\constraints}[1]{\mathit{cons}(#1)}
+\newcommand{\maps}[1]{\mathit{maps}(#1)}
+\newcommand{\cons}[1]{\mathit{cons}(#1)}
+\newcommand{\satisfies}{\models}
+\newcommand{\ldb}{\mbox{[\![}}
+\newcommand{\vars}{\mathit{v}}
+\newcommand{\atoms}{\mathit{atoms}}
+\newcommand{\fm}[1]{fm(#1)}
+%\newcommand{\map}[2]{#2 \mapsto #1}
+\newcommand{\map}[2]{\isubst{#1}{#2}}
+\newcommand{\fsubj}[1]{fsubj(#1)}
+\newcommand{\sym}[2]{{\mathsf{#1}}(#2)}
+% \newcommand{\translAtoE}[1]{\ldbr #1 \rdbr_{\text{A2E}}}
+% \newcommand{\translPolytoE}[1]{\ldbr #1 \rdbr_{\text{Poly}\rightarrow\text{E}}}
+\newcommand{\translAtoE}[1]{\ldbr #1 \rdbr}
+\newcommand{\translPolytoE}[1]{\ldbr #1 \rdbr}
+\newcommand{\enc}[1]{\ldbr #1\rdbr}
+\newcommand{\inred}[1]{\textcolor{red}{#1}}
+\newcommand{\fdom}[1]{\mbox{\rm dom($#1$)}}
+\newcommand{\subterm}[1]{\mbox{\rm subterm($#1$)}}
+\newcommand{\state}{\textbf{state }}
+\newcommand{\inv}{\textbf{inv }}
+\newcommand{\statements}{\mathcal{S}}
+\newcommand{\bad}{\mathbf{bad}}
+\newcommand{\wf}[1]{\mathbf{wf}(#1)}
+\newcommand{\true}{\mathrm{\bf true}}
+\newcommand{\false}{\mathrm{\bf false}}
+\newcommand{\ftimes}{{\otimes}}
+\newcommand{\fplus}{\oplus}
+\newcommand{\trip}[1]{\ldbr #1 \rdbr_{\text{strip}}}
+\newcommand{\nf}[1]{\mbox{\rm nf}(#1)}
+\newcommand{\cond}[1]{\mbox{\rm co}(#1)}
+\newcommand{\states}[1]{\mbox{\rm st}(#1)}
+\newcommand{\constfree}[1]{\mbox{\rm noconst}(#1)}
+%\newcommand{\emptyframe}{{\bf 1}} % Retire
+\newcommand{\unit}{{\bf 1}}
+\newcommand{\Ch}{\mbox{\rm\textbf{C}}}
+\newcommand{\Chtype}[1]{#1:\Ch}
+\newcommand{\ceq}{\stackrel{\texttt{{\rm\tiny C}}}{\mapsto}}
+\newcommand{\sameCh}{\mbox{\rm\texttt{sameCh}}}
+\newcommand{\frameng}[2]{\langle #1 \; , \; #2 \rangle}
+\newcommand{\statcomb}{\cup}
+\newcommand{\sch}{\stackrel{{\hspace{.05ex}\hbox{\ensuremath{\mathbf{.}}}}}{\leftrightarrow}}
+\newcommand{\stmn}[1]{\{#1\}}
+%\newcommand{\framedtrans}[5]{#1: \framedtransempty{#2}{#3}{#4}{#5}}
+%\newcommand{\framedtransempty}[4]{ #1 \frames \trans{#2}{#3}{#4}}
+\newcommand{\frnames}[1]{\ve{b}_{#1}}
+\newcommand{\frass}[1]{\Psi_{#1}}
+\newcommand{\topterms}[1]{\sym{tterms}{#1}}
+\newcommand{\nameset}{\mbox{$\cal N$}}
+\newcommand{\varset}{\mathcal{V}}
+\newcommand{\chanset}{\mathsf{Chan}}
+\newcommand{\constr}[1]{\{\!| #1 |\!\}}
+%\newcommand{\comb}[2]{#1 \Vdash #2}
+\newcommand{\comb}[2]{\mbox{\rm\texttt{inject}}(#1,#2)}
+\newcommand{\unify}[2]{{\rm unify}(#1,#2)}
+\newcommand{\pass}[1]{(\!\!|#1|\!\!)}
+%\newcommand{\pass}[1]{\langlebar#1\ranglebar}
+\newcommand{\framepair}[2]{(\nu #1)#2}
+\newcommand{\frameof}[1]{\mathcal{F}(#1)}
+\newcommand{\swbisim}[3]{#2 \underset{{\rm smp}}{\wbisim} {}_{\!\!\!\!#1} \;
+#3}
+\newcommand{\notswbisim}[3]{#2 \underset{{\rm smp}}{\not\wbisim} {}_{\!\!\!\!#1} \;
+#3}
+\newcommand{\taubisim}[3]{#1 \frames #2 \underset{{\rm tau}}{\wbisim} #3}
+\newcommand{\staubisim}[3]{#2 \; {\underset{{\rm \!\!\!\!tau}}{{\wbisim^s}}} {}_{\!\!\!\!#1}\; #3}
+\newcommand{\symbwbisim}[3]{#2\; {\wbisim^s}_{\!\!\!\!#1}\; #3}
+\newcommand{\symbwbisimtrue}[2]{#1\; {\wbisim^s} \; #2}
+\newcommand{\symbwcong}[2]{#1 \wcong^s #2}
+\newcommand{\spbar}{\hspace{2mm} | \hspace{2mm}} %used for BFN syntax shaping 
+
