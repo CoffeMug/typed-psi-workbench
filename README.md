@@ -13,11 +13,9 @@ Other SML implementations may work, but only Poly/ML has been tested.
 Directory content
 -----------------
 
-    src/      - workbench source
+    src/      - workbench source 
     tools/    - auxiliary tools
-    doc/      - master thesis report, presentation, specification
-    papers/   - related literature
-    examples/ - Psi-calculus instance example implementations
+    examples/ - Typed Psi-calculus instance example implementations
 
 
 Examples
